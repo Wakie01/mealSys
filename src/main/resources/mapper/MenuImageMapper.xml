@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my.mealsys.mapper.MenuImageMapper">
+  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.MenuImage">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="menuId" jdbcType="INTEGER" property="menuId" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+  </resultMap>
+
+  <insert id="insertMenuImage" parameterType="com.my.mealsys.entity.MenuImage" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    insert into menuimage (menuId,url) value (#{menuId}, #{url})
+  </insert>
+
+  <insert id="insertImageUrl" parameterType="com.my.mealsys.entity.MenuImage" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    insert into menuimage (url) value (#{url})
+  </insert>
+</mapper>

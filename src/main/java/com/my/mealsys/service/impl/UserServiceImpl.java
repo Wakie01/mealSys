@@ -1,5 +1,6 @@
 package com.my.mealsys.service.impl;
 
+import com.my.mealsys.entity.User;
 import com.my.mealsys.enums.CodeMsgEnums;
 import com.my.mealsys.mapper.UserMapper;
 import com.my.mealsys.result.Result;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -34,9 +36,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public Map login(String acot, String password, HttpSession httpSession) {
         try {
-            if(userMapper.checkUserAcotPsw(acot, password)>0){
-                httpSession.setAttribute("user",acot);
-                return Result.success(CodeMsgEnums.SUCCESS,null);
+            Map<String,User> dataMap=new HashMap<>();
+            User user=userMapper.checkUserAcotPsw(acot, password);
+            if(user!=null){
+                httpSession.setAttribute("user",user.getId());
+                dataMap.put("user",user);
+                return Result.success(CodeMsgEnums.SUCCESS,dataMap);
             }else{
                 return Result.error(CodeMsgEnums.LOGIN_FAIL);
             }

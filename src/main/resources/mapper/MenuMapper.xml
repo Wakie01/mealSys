@@ -10,155 +10,160 @@
     <result column="image" jdbcType="VARCHAR" property="image" />
     <result column="typeId" jdbcType="INTEGER" property="typeId" />
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from "menu"
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.my.mealsys.entity.Menu">
-    insert into "menu" (id, name, quantity, 
-      price, description, image, 
-      typeId)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, 
-      #{price,jdbcType=DOUBLE}, #{description,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
-      #{typeId,jdbcType=INTEGER})
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from "menu"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.Menu">-->
+<!--    insert into "menu" (id, name, quantity, -->
+<!--      price, description, image, -->
+<!--      typeId)-->
+<!--    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, -->
+<!--      #{price,jdbcType=DOUBLE}, #{description,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, -->
+<!--      #{typeId,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Menu">-->
+<!--    update "menu"-->
+<!--    set name = #{name,jdbcType=VARCHAR},-->
+<!--      quantity = #{quantity,jdbcType=INTEGER},-->
+<!--      price = #{price,jdbcType=DOUBLE},-->
+<!--      description = #{description,jdbcType=VARCHAR},-->
+<!--      image = #{image,jdbcType=VARCHAR},-->
+<!--      typeId = #{typeId,jdbcType=INTEGER}-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select id, name, quantity, price, description, image, typeId-->
+<!--    from "menu"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select id, name, quantity, price, description, image, typeId-->
+<!--    from "menu"-->
+<!--  </select>-->
+<!--  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Menu">-->
+<!--    <id column="id" jdbcType="INTEGER" property="id" />-->
+<!--    <result column="name" jdbcType="VARCHAR" property="name" />-->
+<!--    <result column="quantity" jdbcType="INTEGER" property="quantity" />-->
+<!--    <result column="price" jdbcType="DOUBLE" property="price" />-->
+<!--    <result column="description" jdbcType="VARCHAR" property="description" />-->
+<!--    <result column="image" jdbcType="VARCHAR" property="image" />-->
+<!--    <result column="typeId" jdbcType="INTEGER" property="typeId" />-->
+<!--  </resultMap>-->
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from "menu"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.Menu">-->
+<!--    insert into "menu" (id, name, quantity, -->
+<!--      price, description, image, -->
+<!--      typeId)-->
+<!--    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, -->
+<!--      #{price,jdbcType=DOUBLE}, #{description,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, -->
+<!--      #{typeId,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Menu">-->
+<!--    update "menu"-->
+<!--    set name = #{name,jdbcType=VARCHAR},-->
+<!--      quantity = #{quantity,jdbcType=INTEGER},-->
+<!--      price = #{price,jdbcType=DOUBLE},-->
+<!--      description = #{description,jdbcType=VARCHAR},-->
+<!--      image = #{image,jdbcType=VARCHAR},-->
+<!--      typeId = #{typeId,jdbcType=INTEGER}-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select id, name, quantity, price, description, image, typeId-->
+<!--    from "menu"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select id, name, quantity, price, description, image, typeId-->
+<!--    from "menu"-->
+<!--  </select>-->
+<!--  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Menu">-->
+<!--    <id column="id" jdbcType="INTEGER" property="id" />-->
+<!--    <result column="name" jdbcType="VARCHAR" property="name" />-->
+<!--    <result column="quantity" jdbcType="INTEGER" property="quantity" />-->
+<!--    <result column="price" jdbcType="DOUBLE" property="price" />-->
+<!--    <result column="description" jdbcType="VARCHAR" property="description" />-->
+<!--    <result column="image" jdbcType="VARCHAR" property="image" />-->
+<!--    <result column="typeId" jdbcType="INTEGER" property="typeId" />-->
+<!--  </resultMap>-->
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from "menu"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.Menu">-->
+<!--    insert into "menu" (id, name, quantity, -->
+<!--      price, description, image, -->
+<!--      typeId)-->
+<!--    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, -->
+<!--      #{price,jdbcType=DOUBLE}, #{description,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, -->
+<!--      #{typeId,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Menu">-->
+<!--    update "menu"-->
+<!--    set name = #{name,jdbcType=VARCHAR},-->
+<!--      quantity = #{quantity,jdbcType=INTEGER},-->
+<!--      price = #{price,jdbcType=DOUBLE},-->
+<!--      description = #{description,jdbcType=VARCHAR},-->
+<!--      image = #{image,jdbcType=VARCHAR},-->
+<!--      typeId = #{typeId,jdbcType=INTEGER}-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select id, name, quantity, price, description, image, typeId-->
+<!--    from "menu"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select id, name, quantity, price, description, image, typeId-->
+<!--    from "menu"-->
+<!--  </select>-->
+<!--  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Menu">-->
+<!--    <id column="id" jdbcType="INTEGER" property="id" />-->
+<!--    <result column="name" jdbcType="VARCHAR" property="name" />-->
+<!--    <result column="quantity" jdbcType="INTEGER" property="quantity" />-->
+<!--    <result column="price" jdbcType="DOUBLE" property="price" />-->
+<!--    <result column="description" jdbcType="VARCHAR" property="description" />-->
+<!--    <result column="image" jdbcType="VARCHAR" property="image" />-->
+<!--    <result column="typeId" jdbcType="INTEGER" property="typeid" />-->
+<!--  </resultMap>-->
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from "menu"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.Menu">-->
+<!--    insert into "menu" (id, name, quantity, -->
+<!--      price, description, image, -->
+<!--      typeId)-->
+<!--    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, -->
+<!--      #{price,jdbcType=DOUBLE}, #{description,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, -->
+<!--      #{typeid,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Menu">-->
+<!--    update "menu"-->
+<!--    set name = #{name,jdbcType=VARCHAR},-->
+<!--      quantity = #{quantity,jdbcType=INTEGER},-->
+<!--      price = #{price,jdbcType=DOUBLE},-->
+<!--      description = #{description,jdbcType=VARCHAR},-->
+<!--      image = #{image,jdbcType=VARCHAR},-->
+<!--      typeId = #{typeid,jdbcType=INTEGER}-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select id, name, quantity, price, description, image, typeId-->
+<!--    from "menu"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select id, name, quantity, price, description, image, typeId-->
+<!--    from "menu"-->
+<!--  </select>-->
+
+  <insert id="addMenu" parameterType="com.my.mealsys.entity.Menu" keyColumn="id" useGeneratedKeys="true" keyProperty="id">
+    insert into menu(name,quantity,price,description,image,typeId)
+    value (#{name}, #{quantity}, #{price}, #{description}, #{image}, #{typeId})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Menu">
-    update "menu"
-    set name = #{name,jdbcType=VARCHAR},
-      quantity = #{quantity,jdbcType=INTEGER},
-      price = #{price,jdbcType=DOUBLE},
-      description = #{description,jdbcType=VARCHAR},
-      image = #{image,jdbcType=VARCHAR},
-      typeId = #{typeId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, name, quantity, price, description, image, typeId
-    from "menu"
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, name, quantity, price, description, image, typeId
-    from "menu"
-  </select>
-  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Menu">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="quantity" jdbcType="INTEGER" property="quantity" />
-    <result column="price" jdbcType="DOUBLE" property="price" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="image" jdbcType="VARCHAR" property="image" />
-    <result column="typeId" jdbcType="INTEGER" property="typeId" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from "menu"
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.my.mealsys.entity.Menu">
-    insert into "menu" (id, name, quantity, 
-      price, description, image, 
-      typeId)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, 
-      #{price,jdbcType=DOUBLE}, #{description,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
-      #{typeId,jdbcType=INTEGER})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Menu">
-    update "menu"
-    set name = #{name,jdbcType=VARCHAR},
-      quantity = #{quantity,jdbcType=INTEGER},
-      price = #{price,jdbcType=DOUBLE},
-      description = #{description,jdbcType=VARCHAR},
-      image = #{image,jdbcType=VARCHAR},
-      typeId = #{typeId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, name, quantity, price, description, image, typeId
-    from "menu"
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, name, quantity, price, description, image, typeId
-    from "menu"
-  </select>
-  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Menu">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="quantity" jdbcType="INTEGER" property="quantity" />
-    <result column="price" jdbcType="DOUBLE" property="price" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="image" jdbcType="VARCHAR" property="image" />
-    <result column="typeId" jdbcType="INTEGER" property="typeId" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from "menu"
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.my.mealsys.entity.Menu">
-    insert into "menu" (id, name, quantity, 
-      price, description, image, 
-      typeId)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, 
-      #{price,jdbcType=DOUBLE}, #{description,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
-      #{typeId,jdbcType=INTEGER})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Menu">
-    update "menu"
-    set name = #{name,jdbcType=VARCHAR},
-      quantity = #{quantity,jdbcType=INTEGER},
-      price = #{price,jdbcType=DOUBLE},
-      description = #{description,jdbcType=VARCHAR},
-      image = #{image,jdbcType=VARCHAR},
-      typeId = #{typeId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, name, quantity, price, description, image, typeId
-    from "menu"
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, name, quantity, price, description, image, typeId
-    from "menu"
-  </select>
-  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Menu">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="quantity" jdbcType="INTEGER" property="quantity" />
-    <result column="price" jdbcType="DOUBLE" property="price" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="image" jdbcType="VARCHAR" property="image" />
-    <result column="typeId" jdbcType="INTEGER" property="typeid" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from "menu"
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.my.mealsys.entity.Menu">
-    insert into "menu" (id, name, quantity, 
-      price, description, image, 
-      typeId)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, 
-      #{price,jdbcType=DOUBLE}, #{description,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
-      #{typeid,jdbcType=INTEGER})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Menu">
-    update "menu"
-    set name = #{name,jdbcType=VARCHAR},
-      quantity = #{quantity,jdbcType=INTEGER},
-      price = #{price,jdbcType=DOUBLE},
-      description = #{description,jdbcType=VARCHAR},
-      image = #{image,jdbcType=VARCHAR},
-      typeId = #{typeid,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, name, quantity, price, description, image, typeId
-    from "menu"
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, name, quantity, price, description, image, typeId
-    from "menu"
-  </select>
 </mapper>

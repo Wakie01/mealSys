@@ -20,6 +20,12 @@ public class Bill {
 
     private Integer userId;
 
+    public Bill(Integer deskId, String orderTime, Boolean finish) {
+        this.deskId = deskId;
+        this.orderTime = orderTime;
+        this.finish = finish;
+    }
+
     public Integer getId() {
         return id;
     }

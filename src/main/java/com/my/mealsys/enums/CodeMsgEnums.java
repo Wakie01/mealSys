@@ -15,8 +15,13 @@ public enum CodeMsgEnums {
     LACK_PARAM(3,"缺少参数"),
     USER_ALREADY_EXIST(4,"该账号已被注册"),
     ERROR(5,"出错"),
-    LOGOUT_FAIL(6,"注销失败"),
+    LOGOUT_FAIL(6,"用户已注销"),
     LOGIN_FIRST(7,"请先登录"),
+    BILL_ALREADY_FINISH(8,"该账单已经结束"),
+    INSUFFICIENT_QUANTITY(9,"库存不足"),
+    IMAGE_UPLOAD_FAIL(10,"图片上传出错"),
+    USER_ONLINE(11,"用户已登录"),
+    USER_OFFLINE(12,"用户未登录"),
     ;
 
     private int code;

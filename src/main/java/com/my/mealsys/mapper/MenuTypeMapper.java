@@ -1,21 +1,26 @@
 package com.my.mealsys.mapper;
 
 import com.my.mealsys.entity.MenuType;
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 @Repository
 public interface MenuTypeMapper {
-    int deleteByPrimaryKey(Integer id);
 
-    int insert(MenuType record);
+    @Select("select * from menutype")
+    List<MenuType> getAllMenuTypes();
 
-    MenuType selectByPrimaryKey(Integer id);
+    @Update("update menutype set name=#{name} where id=#{id}")
+    int updateMenuType(Integer id,String name);
 
-    List<MenuType> selectAll();
+    @Insert("insert into menutype(name) values(#{name})")
+    int addMenuType(String name);
 
-    int updateByPrimaryKey(MenuType record);
+    @Delete("delete from menutype where id=#{id}")
+    int removeMenuType(Integer id);
 }

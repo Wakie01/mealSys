@@ -1,1 +1,29 @@
+server:
+  port: 8087
+  tomcat:
+    max-http-form-post-size: 10MB
+    
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: wakie
+    url: jdbc:mysql://localhost:3306/mealsys?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+
+
+
+
+
+
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.my.mealsys.entity
 

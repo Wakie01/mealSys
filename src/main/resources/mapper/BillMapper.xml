@@ -8,133 +8,146 @@
     <result column="finish" jdbcType="BIT" property="finish" />
     <result column="userId" jdbcType="INTEGER" property="userId" />
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from "bill"
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.my.mealsys.entity.Bill">
-    insert into "bill" (id, deskId, orderTime, 
-      finish, userId)
-    values (#{id,jdbcType=INTEGER}, #{deskId,jdbcType=INTEGER}, #{orderTime,jdbcType=VARCHAR},
-      #{finish,jdbcType=BIT}, #{userId,jdbcType=INTEGER})
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from "bill"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.Bill">-->
+<!--    insert into "bill" (id, deskId, orderTime, -->
+<!--      finish, userId)-->
+<!--    values (#{id,jdbcType=INTEGER}, #{deskId,jdbcType=INTEGER}, #{orderTime,jdbcType=VARCHAR},-->
+<!--      #{finish,jdbcType=BIT}, #{userId,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Bill">-->
+<!--    update "bill"-->
+<!--    set deskId = #{deskId,jdbcType=INTEGER},-->
+<!--      orderTime = #{orderTime,jdbcType=VARCHAR},-->
+<!--      finish = #{finish,jdbcType=BIT},-->
+<!--      userId = #{userId,jdbcType=INTEGER}-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select id, deskId, orderTime, finish, userId-->
+<!--    from "bill"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select id, deskId, orderTime, finish, userId-->
+<!--    from "bill"-->
+<!--  </select>-->
+<!--  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Bill">-->
+<!--    <id column="id" jdbcType="INTEGER" property="id" />-->
+<!--    <result column="deskId" jdbcType="INTEGER" property="deskId" />-->
+<!--    <result column="orderTime" jdbcType="VARCHAR" property="orderTime" />-->
+<!--    <result column="finish" jdbcType="BIT" property="finish" />-->
+<!--    <result column="userId" jdbcType="INTEGER" property="userId" />-->
+<!--  </resultMap>-->
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from "bill"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.Bill">-->
+<!--    insert into "bill" (id, deskId, orderTime, -->
+<!--      finish, userId)-->
+<!--    values (#{id,jdbcType=INTEGER}, #{deskId,jdbcType=INTEGER}, #{orderTime,jdbcType=VARCHAR},-->
+<!--      #{finish,jdbcType=BIT}, #{userId,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Bill">-->
+<!--    update "bill"-->
+<!--    set deskId = #{deskId,jdbcType=INTEGER},-->
+<!--      orderTime = #{orderTime,jdbcType=VARCHAR},-->
+<!--      finish = #{finish,jdbcType=BIT},-->
+<!--      userId = #{userId,jdbcType=INTEGER}-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select id, deskId, orderTime, finish, userId-->
+<!--    from "bill"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select id, deskId, orderTime, finish, userId-->
+<!--    from "bill"-->
+<!--  </select>-->
+<!--  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Bill">-->
+<!--    <id column="id" jdbcType="INTEGER" property="id" />-->
+<!--    <result column="deskId" jdbcType="INTEGER" property="deskId" />-->
+<!--    <result column="time" jdbcType="VARCHAR" property="time" />-->
+<!--    <result column="finish" jdbcType="BIT" property="finish" />-->
+<!--    <result column="userId" jdbcType="INTEGER" property="userId" />-->
+<!--  </resultMap>-->
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from "bill"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.Bill">-->
+<!--    insert into "bill" (id, deskId, time, -->
+<!--      finish, userId)-->
+<!--    values (#{id,jdbcType=INTEGER}, #{deskId,jdbcType=INTEGER}, #{time,jdbcType=VARCHAR},-->
+<!--      #{finish,jdbcType=BIT}, #{userId,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Bill">-->
+<!--    update "bill"-->
+<!--    set deskId = #{deskId,jdbcType=INTEGER},-->
+<!--      time = #{time,jdbcType=VARCHAR},-->
+<!--      finish = #{finish,jdbcType=BIT},-->
+<!--      userId = #{userId,jdbcType=INTEGER}-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select id, deskId, time, finish, userId-->
+<!--    from "bill"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select id, deskId, time, finish, userId-->
+<!--    from "bill"-->
+<!--  </select>-->
+<!--  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Bill">-->
+<!--    <id column="id" jdbcType="INTEGER" property="id" />-->
+<!--    <result column="deskId" jdbcType="INTEGER" property="deskid" />-->
+<!--    <result column="time" jdbcType="VARCHAR" property="time" />-->
+<!--    <result column="finish" jdbcType="BIT" property="finish" />-->
+<!--    <result column="userId" jdbcType="INTEGER" property="userid" />-->
+<!--  </resultMap>-->
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from "bill"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.Bill">-->
+<!--    insert into "bill" (id, deskId, time,-->
+<!--      finish, userId)-->
+<!--    values (#{id,jdbcType=INTEGER}, #{deskid,jdbcType=INTEGER}, #{time,jdbcType=VARCHAR},-->
+<!--      #{finish,jdbcType=BIT}, #{userid,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Bill">-->
+<!--    update "bill"-->
+<!--    set deskId = #{deskid,jdbcType=INTEGER},-->
+<!--      time = #{time,jdbcType=VARCHAR},-->
+<!--      finish = #{finish,jdbcType=BIT},-->
+<!--      userId = #{userid,jdbcType=INTEGER}-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select id, deskId, time, finish, userId-->
+<!--    from "bill"-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select id, deskId, time, finish, userId-->
+<!--    from "bill"-->
+<!--  </select>-->
+
+<!--  <insert id="generateBill" parameterType="com.my.mealsys.entity.Bill">-->
+<!--    <selectKey keyProperty="id" keyColumn="id" order="AFTER" resultType="java.lang.Integer">-->
+<!--      select last_insert_id()-->
+<!--    </selectKey>-->
+<!--    insert into bill (deskId,orderTime,finish)-->
+<!--    value (#{deskId,jdbcType=INTEGER}, #{orderTime,jdbcType=VARCHAR}, #{finish,jdbcType=BIT})-->
+<!--  </insert>-->
+
+  <insert id="generateBill" parameterType="com.my.mealsys.entity.Bill" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    insert into bill (deskId,orderTime,finish)
+    value (#{deskId,jdbcType=INTEGER}, #{orderTime,jdbcType=VARCHAR}, #{finish,jdbcType=BIT})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Bill">
-    update "bill"
-    set deskId = #{deskId,jdbcType=INTEGER},
-      orderTime = #{orderTime,jdbcType=VARCHAR},
-      finish = #{finish,jdbcType=BIT},
-      userId = #{userId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, deskId, orderTime, finish, userId
-    from "bill"
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, deskId, orderTime, finish, userId
-    from "bill"
-  </select>
-  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Bill">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="deskId" jdbcType="INTEGER" property="deskId" />
-    <result column="orderTime" jdbcType="VARCHAR" property="orderTime" />
-    <result column="finish" jdbcType="BIT" property="finish" />
-    <result column="userId" jdbcType="INTEGER" property="userId" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from "bill"
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.my.mealsys.entity.Bill">
-    insert into "bill" (id, deskId, orderTime, 
-      finish, userId)
-    values (#{id,jdbcType=INTEGER}, #{deskId,jdbcType=INTEGER}, #{orderTime,jdbcType=VARCHAR},
-      #{finish,jdbcType=BIT}, #{userId,jdbcType=INTEGER})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Bill">
-    update "bill"
-    set deskId = #{deskId,jdbcType=INTEGER},
-      orderTime = #{orderTime,jdbcType=VARCHAR},
-      finish = #{finish,jdbcType=BIT},
-      userId = #{userId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, deskId, orderTime, finish, userId
-    from "bill"
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, deskId, orderTime, finish, userId
-    from "bill"
-  </select>
-  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Bill">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="deskId" jdbcType="INTEGER" property="deskId" />
-    <result column="time" jdbcType="VARCHAR" property="time" />
-    <result column="finish" jdbcType="BIT" property="finish" />
-    <result column="userId" jdbcType="INTEGER" property="userId" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from "bill"
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.my.mealsys.entity.Bill">
-    insert into "bill" (id, deskId, time, 
-      finish, userId)
-    values (#{id,jdbcType=INTEGER}, #{deskId,jdbcType=INTEGER}, #{time,jdbcType=VARCHAR},
-      #{finish,jdbcType=BIT}, #{userId,jdbcType=INTEGER})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Bill">
-    update "bill"
-    set deskId = #{deskId,jdbcType=INTEGER},
-      time = #{time,jdbcType=VARCHAR},
-      finish = #{finish,jdbcType=BIT},
-      userId = #{userId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, deskId, time, finish, userId
-    from "bill"
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, deskId, time, finish, userId
-    from "bill"
-  </select>
-  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.Bill">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="deskId" jdbcType="INTEGER" property="deskid" />
-    <result column="time" jdbcType="VARCHAR" property="time" />
-    <result column="finish" jdbcType="BIT" property="finish" />
-    <result column="userId" jdbcType="INTEGER" property="userid" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from "bill"
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.my.mealsys.entity.Bill">
-    insert into "bill" (id, deskId, time, 
-      finish, userId)
-    values (#{id,jdbcType=INTEGER}, #{deskid,jdbcType=INTEGER}, #{time,jdbcType=VARCHAR},
-      #{finish,jdbcType=BIT}, #{userid,jdbcType=INTEGER})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.my.mealsys.entity.Bill">
-    update "bill"
-    set deskId = #{deskid,jdbcType=INTEGER},
-      time = #{time,jdbcType=VARCHAR},
-      finish = #{finish,jdbcType=BIT},
-      userId = #{userid,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, deskId, time, finish, userId
-    from "bill"
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, deskId, time, finish, userId
-    from "bill"
-  </select>
 </mapper>

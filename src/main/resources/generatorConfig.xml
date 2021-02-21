@@ -28,31 +28,31 @@
                              targetPackage="com.my.mealsys.mapper"
                              targetProject="src/main/java"></javaClientGenerator>
 
-        <table tableName="bill" domainObjectName="Bill" delimitIdentifiers="true"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" selectByExampleQueryId="false">
-            <property name="useActualColumnNames" value="true" />
-        </table>
+<!--        <table tableName="bill" domainObjectName="Bill" delimitIdentifiers="true"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="useActualColumnNames" value="true" />-->
+<!--        </table>-->
 
-        <table tableName="menu" domainObjectName="Menu" delimitIdentifiers="true"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" selectByExampleQueryId="false">
-            <property name="useActualColumnNames" value="true" />
-        </table>
+<!--        <table tableName="menu" domainObjectName="Menu" delimitIdentifiers="true"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="useActualColumnNames" value="true" />-->
+<!--        </table>-->
 
-        <table tableName="menubill" domainObjectName="MenuBill" delimitIdentifiers="true"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" selectByExampleQueryId="false">
-            <property name="useActualColumnNames" value="true" />
-        </table>
+<!--        <table tableName="menubill" domainObjectName="MenuBill" delimitIdentifiers="true"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="useActualColumnNames" value="true" />-->
+<!--        </table>-->
 
-        <table tableName="menutype" domainObjectName="MenuType" delimitIdentifiers="true"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" selectByExampleQueryId="false">
-            <property name="useActualColumnNames" value="true" />
-        </table>
+<!--        <table tableName="menutype" domainObjectName="MenuType" delimitIdentifiers="true"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="useActualColumnNames" value="true" />-->
+<!--        </table>-->
 
-        <table tableName="user" domainObjectName="User" delimitIdentifiers="true"
+        <table tableName="menuimage" domainObjectName="MenuImage" delimitIdentifiers="true"
                enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false" selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="true" />

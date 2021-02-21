@@ -11,9 +11,7 @@ import java.util.List;
 @Mapper
 @Repository
 public interface UserMapper {
-    int insert(User record);
 
-    List<User> selectAll();
 
     /**
      * 检查账号是否被注册
@@ -38,6 +36,6 @@ public interface UserMapper {
      * @param password
      * @return
      */
-    @Select("select count(*) from user where acot=#{acot} and password=#{password}")
-    int checkUserAcotPsw(String acot,String password);
+    @Select("select id,name,acot from user where acot=#{acot} and password=#{password}")
+    User checkUserAcotPsw(String acot,String password);
 }

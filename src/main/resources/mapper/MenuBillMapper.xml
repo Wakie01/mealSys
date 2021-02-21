@@ -9,72 +9,80 @@
     <result column="menuTime" jdbcType="VARCHAR" property="menuTime" />
     <result column="userId" jdbcType="INTEGER" property="userId" />
   </resultMap>
-  <insert id="insert" parameterType="com.my.mealsys.entity.MenuBill">
-    insert into "menubill" (billId, menuId, quantity, 
-      finish, menuTime, userId
-      )
-    values (#{billId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER}, 
-      #{finish,jdbcType=BIT}, #{menuTime,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}
-      )
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.MenuBill">-->
+<!--    insert into "menubill" (billId, menuId, quantity, -->
+<!--      finish, menuTime, userId-->
+<!--      )-->
+<!--    values (#{billId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER}, -->
+<!--      #{finish,jdbcType=BIT}, #{menuTime,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}-->
+<!--      )-->
+<!--  </insert>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select billId, menuId, quantity, finish, menuTime, userId-->
+<!--    from "menubill"-->
+<!--  </select>-->
+<!--  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.MenuBill">-->
+<!--    <result column="billId" jdbcType="INTEGER" property="billId" />-->
+<!--    <result column="menuId" jdbcType="INTEGER" property="menuId" />-->
+<!--    <result column="quantity" jdbcType="INTEGER" property="quantity" />-->
+<!--    <result column="finish" jdbcType="BIT" property="finish" />-->
+<!--    <result column="menuTime" jdbcType="VARCHAR" property="menuTime" />-->
+<!--    <result column="userId" jdbcType="INTEGER" property="userId" />-->
+<!--  </resultMap>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.MenuBill">-->
+<!--    insert into "menubill" (billId, menuId, quantity, -->
+<!--      finish, menuTime, userId-->
+<!--      )-->
+<!--    values (#{billId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER}, -->
+<!--      #{finish,jdbcType=BIT}, #{menuTime,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}-->
+<!--      )-->
+<!--  </insert>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select billId, menuId, quantity, finish, menuTime, userId-->
+<!--    from "menubill"-->
+<!--  </select>-->
+<!--  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.MenuBill">-->
+<!--    <result column="billId" jdbcType="INTEGER" property="billId" />-->
+<!--    <result column="menuId" jdbcType="INTEGER" property="menuId" />-->
+<!--    <result column="quantity" jdbcType="INTEGER" property="quantity" />-->
+<!--    <result column="finish" jdbcType="BIT" property="finish" />-->
+<!--    <result column="time" jdbcType="VARCHAR" property="time" />-->
+<!--    <result column="userId" jdbcType="INTEGER" property="userId" />-->
+<!--  </resultMap>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.MenuBill">-->
+<!--    insert into "menubill" (billId, menuId, quantity, -->
+<!--      finish, time, userId)-->
+<!--    values (#{billId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER}, -->
+<!--      #{finish,jdbcType=BIT}, #{time,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select billId, menuId, quantity, finish, time, userId-->
+<!--    from "menubill"-->
+<!--  </select>-->
+<!--  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.MenuBill">-->
+<!--    <result column="billId" jdbcType="INTEGER" property="billid" />-->
+<!--    <result column="menuId" jdbcType="INTEGER" property="menuid" />-->
+<!--    <result column="quantity" jdbcType="INTEGER" property="quantity" />-->
+<!--    <result column="finish" jdbcType="BIT" property="finish" />-->
+<!--    <result column="time" jdbcType="VARCHAR" property="time" />-->
+<!--    <result column="userId" jdbcType="INTEGER" property="userid" />-->
+<!--  </resultMap>-->
+<!--  <insert id="insert" parameterType="com.my.mealsys.entity.MenuBill">-->
+<!--    insert into "menubill" (billId, menuId, quantity, -->
+<!--      finish, time, userId)-->
+<!--    values (#{billid,jdbcType=INTEGER}, #{menuid,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER}, -->
+<!--      #{finish,jdbcType=BIT}, #{time,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER})-->
+<!--  </insert>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select billId, menuId, quantity, finish, time, userId-->
+<!--    from "menubill"-->
+<!--  </select>-->
+
+  <insert id="generateMenuBill">
+    insert into menubill (billId,menuId,quantity,finish)
+    values
+    <foreach collection="menuBillInfoList" item="item" separator=",">
+        (#{billId}, #{item.menuId}, #{item.quantity}, false)
+    </foreach>
   </insert>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select billId, menuId, quantity, finish, menuTime, userId
-    from "menubill"
-  </select>
-  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.MenuBill">
-    <result column="billId" jdbcType="INTEGER" property="billId" />
-    <result column="menuId" jdbcType="INTEGER" property="menuId" />
-    <result column="quantity" jdbcType="INTEGER" property="quantity" />
-    <result column="finish" jdbcType="BIT" property="finish" />
-    <result column="menuTime" jdbcType="VARCHAR" property="menuTime" />
-    <result column="userId" jdbcType="INTEGER" property="userId" />
-  </resultMap>
-  <insert id="insert" parameterType="com.my.mealsys.entity.MenuBill">
-    insert into "menubill" (billId, menuId, quantity, 
-      finish, menuTime, userId
-      )
-    values (#{billId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER}, 
-      #{finish,jdbcType=BIT}, #{menuTime,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}
-      )
-  </insert>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select billId, menuId, quantity, finish, menuTime, userId
-    from "menubill"
-  </select>
-  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.MenuBill">
-    <result column="billId" jdbcType="INTEGER" property="billId" />
-    <result column="menuId" jdbcType="INTEGER" property="menuId" />
-    <result column="quantity" jdbcType="INTEGER" property="quantity" />
-    <result column="finish" jdbcType="BIT" property="finish" />
-    <result column="time" jdbcType="VARCHAR" property="time" />
-    <result column="userId" jdbcType="INTEGER" property="userId" />
-  </resultMap>
-  <insert id="insert" parameterType="com.my.mealsys.entity.MenuBill">
-    insert into "menubill" (billId, menuId, quantity, 
-      finish, time, userId)
-    values (#{billId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER}, 
-      #{finish,jdbcType=BIT}, #{time,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER})
-  </insert>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select billId, menuId, quantity, finish, time, userId
-    from "menubill"
-  </select>
-  <resultMap id="BaseResultMap" type="com.my.mealsys.entity.MenuBill">
-    <result column="billId" jdbcType="INTEGER" property="billid" />
-    <result column="menuId" jdbcType="INTEGER" property="menuid" />
-    <result column="quantity" jdbcType="INTEGER" property="quantity" />
-    <result column="finish" jdbcType="BIT" property="finish" />
-    <result column="time" jdbcType="VARCHAR" property="time" />
-    <result column="userId" jdbcType="INTEGER" property="userid" />
-  </resultMap>
-  <insert id="insert" parameterType="com.my.mealsys.entity.MenuBill">
-    insert into "menubill" (billId, menuId, quantity, 
-      finish, time, userId)
-    values (#{billid,jdbcType=INTEGER}, #{menuid,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER}, 
-      #{finish,jdbcType=BIT}, #{time,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER})
-  </insert>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select billId, menuId, quantity, finish, time, userId
-    from "menubill"
-  </select>
 </mapper>

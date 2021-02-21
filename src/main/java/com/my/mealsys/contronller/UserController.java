@@ -86,6 +86,20 @@ public class UserController {
     }
 
 
+    @PostMapping("/checkOnline")
+    public Map checkOnline(HttpSession httpSession){
+        try {
+            return httpSession.getAttribute("user")!=null ? Result.success(CodeMsgEnums.USER_ONLINE,null):
+                    Result.success(CodeMsgEnums.USER_OFFLINE,null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            CodeMsgEnums err=CodeMsgEnums.ERROR;
+            err.setMsg(e.getMessage());
+            return Result.error(err);
+        }
+    }
+
+
 
 
 
