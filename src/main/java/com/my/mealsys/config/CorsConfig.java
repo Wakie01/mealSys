@@ -16,9 +16,10 @@ public class CorsConfig implements WebMvcConfigurer {
                 .maxAge(3600);
     }
 
+    //资源拦截器
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/menuImage/**")
-                .addResourceLocations("file:D:/Java workspace/mealSys/src/main/resources/menusImg/");
+                .addResourceLocations("file:D:/Java workspace/mealSys/src/main/resources/menusImg/");    //文件路径需自行设置
     }
 }

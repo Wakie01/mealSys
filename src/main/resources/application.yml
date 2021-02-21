@@ -1,10 +1,12 @@
 server:
   port: 8087
   tomcat:
+    ## http请求的Form data最大容量
     max-http-form-post-size: 10MB
     
 
 spring:
+  ## 数据库
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -17,12 +19,7 @@ spring:
       max-file-size: 10MB
 
 
-
-
-
-
-
-
+## mybatis配置
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.my.mealsys.entity

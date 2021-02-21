@@ -194,7 +194,7 @@ public class MenuServiceImpl implements MenuService {
         if (type == null) {
             return Result.error(CodeMsgEnums.IMAGE_UPLOAD_FAIL);
         }
-
+        //图片保存路径，需自行设置
         String filePath = "D:/Java workspace/mealSys/src/main/resources/menusImg/";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss");
         String fileName = simpleDateFormat.format(new Date()) + "." + type;
@@ -246,6 +246,7 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public void clearUnusedImage() {
         List<String> urlList=menuImageMapper.getUnusedImage();
+        //图片文件路径
         String filePath = "D:/Java workspace/mealSys/src/main/resources/menusImg/";
         for(String url:urlList){
             new File(filePath+url).delete();
