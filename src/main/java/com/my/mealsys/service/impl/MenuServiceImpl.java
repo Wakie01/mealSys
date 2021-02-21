@@ -45,7 +45,7 @@ public class MenuServiceImpl implements MenuService {
 
         List<Menu> menuList = menuMapper.getAllMenusSimpleInfo();
         for(Menu menu:menuList){
-            if(menu.getImage()!=null){
+            if(menu.getImage()!=null && menu.getImage().contains(",")){
                 String imageId=menu.getImage().split(",")[0];
                 String imageUrl=menuImageMapper.getImageUrlById(Integer.parseInt(imageId));
                 menu.setImage(imageUrl);
@@ -90,7 +90,7 @@ public class MenuServiceImpl implements MenuService {
             //获取热门menu的详细信息
             for (int i = 0; i < 5 && i < menuRecords.size(); i++) {
                 Menu menu = menuMapper.getMenuSimpleInfoByPrimaryKey(menuRecords.get(i).getMenuId());
-                if(menu.getImage()!=null){
+                if(menu.getImage()!=null && menu.getImage().contains(",")){
                     String imageId=menu.getImage().split(",")[0];
                     String imageUrl=menuImageMapper.getImageUrlById(Integer.parseInt(imageId));
                     menu.setImage(imageUrl);
@@ -122,7 +122,7 @@ public class MenuServiceImpl implements MenuService {
 
             //获取图片信息
             List<MenuImage> menuImageList=new ArrayList<>();
-            if(menu.getImage()!=null){
+            if(menu.getImage()!=null && menu.getImage().contains(",")){
                 String[] imageIds=menu.getImage().split(",");
                 for(String image:imageIds){
                     MenuImage menuImage=menuImageMapper.queryById(image);
@@ -160,7 +160,7 @@ public class MenuServiceImpl implements MenuService {
     public Map addMenu(Menu menu) {
         try {
             Integer menuId=menuMapper.addMenu(menu);
-            if(menu.getImage()!=null && menu.getImage()!=""){
+            if(menu.getImage()!=null && menu.getImage().contains(",")){
                 String[] imageIds=menu.getImage().split(",");
                 for(String imageId:imageIds){
                     menuImageMapper.updateMenuId(imageId,menu.getId());
